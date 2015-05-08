@@ -5,12 +5,9 @@ Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
 describe('adding a new client', {:type => :feature}) do
-  it('allows a user to add a new client to the database using a form') do
+  it('will not add clients until there is a stylist to add them to') do
     visit('/')
     click_link('Add New Client')
-    fill_in('name', :with => 'Scary Spice')
-    click_button('Add Client')
-    #fill_in('stylist_id', :with => nil)
-    expect(page).to have_content('Scary Spice')
+    expect(page).to have_content('There are currently no stylists')
   end
 end

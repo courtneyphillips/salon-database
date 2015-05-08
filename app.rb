@@ -45,9 +45,12 @@ post("/stylists/new") do
   redirect('/stylists')
 end
 
-post("/stylists") do
-  name = params.fetch('name')
-  new_stylist = Stylist.new({:name => name, :id => nil})
-  new_client.save()
-  redirect('/stylists')
+get('/clients/:id') do
+#  @thisclient = Client.find(params.fetch("id").to_i())
+  erb(:client)
+end
+
+get('/stylists/:id') do
+#  @stylist = Stylist.find(params.fetch('id').to_i())
+  erb(:stylist)
 end

@@ -1,0 +1,14 @@
+
+<div class="container">
+
+  <h3>Current Stylists:</h3>
+
+  <ul>
+    <% @stylists.each() do |stylist| %>
+      <li><a href="/stylists/<%= stylist.id() %>"> <%= stylist.name() %></a></li>
+    <% end %>
+  </ul>
+
+  <p><a class="btn btn-primary btn-md" href="/" role="button"> < Go Back</a></p>
+
+</div>

@@ -31,7 +31,9 @@ class Client
   end
 
   define_method(:==) do |other|
-    (self.name == other.name) && (self.stylist_id == other.stylist_id) && (self.id == other.id)
+    same_class = self.class() == other.class()
+    same_name = self.name() == other.name()
+    same_class && same_name
   end
 
   define_method(:save) do
@@ -48,5 +50,7 @@ class Client
   define_method(:delete) do
     DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
   end
+
+
 
 end
