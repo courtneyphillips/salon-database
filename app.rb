@@ -47,6 +47,7 @@ end
 
 get('/clients/:id') do
   @client = Client.find(params.fetch("id"))
+  @client_stylist = @client.stylist()
   erb(:client)
 end
 
