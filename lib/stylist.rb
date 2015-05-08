@@ -60,5 +60,4 @@ class Stylist
     DB.exec("DELETE FROM stylists WHERE id = #{self.id()};")
   end
   
-
 end
