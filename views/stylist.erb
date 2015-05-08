@@ -2,27 +2,21 @@
 
   <h1>Stylist:  <%= @stylist.name() %> </h1>
 
-
-
   <% if @stylist_clients.any?() %>
       <h3>Current Clients:</h3>
 
       <ul>
-        <% @clients.each() do |client| %>
+        <% @stylist_clients.each() do |client| %>
           <li><a href="/clients/<%= client.id() %>"> <%= client.name() %></a></li>
         <% end %>
       </ul>
 
   <% else %>
 
-        <p>There are currently no clients. Try <a href="/clients/new">adding a new client</a>, or <a href="/stylists">checking out our stylists</a> instead.</p>
+        <p><%= @stylist.name() %> currently has no clients.</p>
 
   <% end %>
 
 
-
-
-
-  <h2>Stylist's Clients:</h2>
 
 </div>
