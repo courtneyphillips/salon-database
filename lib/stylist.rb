@@ -18,15 +18,11 @@ class Stylist
     stylists
   end
 
-  define_singleton_method(:find) do |person|
-      all_stylists = Stylist.all()
-      found_stylist = nil
-      all_stylists.each do |stylist|
-        if person == stylist
-          found_stylist = stylist
-        end
-      end
-      found_stylist
+  define_singleton_method(:find) do |id|
+    result = DB.exec("SELECT * FROM stylists WHERE id = #{id};")
+    name = result.first().fetch("name")
+    id = result.first().fetch("id").to_i()
+    Stylist.new({:name => name, :id => id})
   end
 
   define_method(:==) do |other|
@@ -59,5 +55,5 @@ class Stylist
   define_method(:delete) do
     DB.exec("DELETE FROM stylists WHERE id = #{self.id()};")
   end
-  
+
 end

@@ -19,15 +19,12 @@ class Client
     clients
   end
 
-  define_singleton_method(:find) do |person|
-      all_clients = Client.all()
-      found_client = nil
-      all_clients.each do |client|
-        if person == client
-          found_client = client
-        end
-      end
-      found_client
+  define_singleton_method(:find) do |id|
+    result = DB.exec("SELECT * FROM clients WHERE id = #{id};")
+    name = result.first().fetch("name")
+    stylist_id = result.first().fetch("stylist_id").to_i()
+    id = result.first().fetch("id").to_i()
+    Client.new({:name => name, :stylist_id => id, :id => id})
   end
 
   define_method(:==) do |other|
@@ -50,7 +47,5 @@ class Client
   define_method(:delete) do
     DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
   end
-
-
 
 end

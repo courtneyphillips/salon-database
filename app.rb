@@ -46,11 +46,12 @@ post("/stylists/new") do
 end
 
 get('/clients/:id') do
-#  @thisclient = Client.find(params.fetch("id").to_i())
+  @client = Client.find(params.fetch("id"))
   erb(:client)
 end
 
 get('/stylists/:id') do
-#  @stylist = Stylist.find(params.fetch('id').to_i())
+  @stylist = Stylist.find(params.fetch("id"))
+  @stylist_clients = @stylist.clients()
   erb(:stylist)
 end
