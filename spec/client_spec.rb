@@ -19,10 +19,10 @@ describe(Client) do
   end
 
   describe('.find') do
-    it("locates and returns a specific client record") do
+    it("locates and returns a specific client record using a unique id") do
       test_client  = Client.new({:name => "Scary Spice", :stylist_id => 1, :id => nil})
       test_client.save()
-      expect(Client.find(test_client)).to(eq(test_client))
+      expect(Client.find(test_client.id())).to(eq(test_client))
     end
   end
 
@@ -69,5 +69,5 @@ describe(Client) do
       expect(Client.all()).to(eq([test_client2]))
     end
   end
-  
+
 end

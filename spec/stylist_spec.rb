@@ -19,10 +19,10 @@ describe(Stylist) do
   end
 
   describe('.find') do
-    it("locates and returns a specific stylist record") do
+    it("locates and returns a specific stylist record using unique id") do
       test_stylist = Stylist.new({:name => "Some Stylist", :id => nil})
       test_stylist.save()
-      expect(Stylist.find(test_stylist)).to(eq(test_stylist))
+      expect(Stylist.find(test_stylist.id())).to(eq(test_stylist))
     end
   end
 
