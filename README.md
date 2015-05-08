@@ -1,9 +1,3 @@
-User Stories:
-
-As an salon owner, I want to view, add, update and delete stylists.
-As a salon owner, I want to view, add, update and delete clients.
-As a salon owner, I want to add clients to a stylist.
-
 
 #Salon Management
 
@@ -11,47 +5,34 @@ As a salon owner, I want to add clients to a stylist.
 
 #### Links
 
-  - Heroku: https://pacific-fjord-4327.herokuapp.com/
-  -Please note that CSS styles did _not_ upload correctly to Heroku.
   - GitHub: https://github.com/courtneyphillips/interactive-dictionary
 
 ## Synopsis
 
-Interactive Dictionary is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to collect user-input words, and correlate them with their user-given definitions.
+Salon Management is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to record hairstylists and their corresponding clients into a database for later recall. Both stylists and clients entries can then be edited as necessary.
 
 ## Motivation
 
 The Hair Salon Management app was created with the following needs of salon owners in mind, as depicted by user stories:
 
-As an salon owner, I want to view, add, update and delete stylists.
-As a salon owner, I want to view, add, update and delete clients.
-As a salon owner, I want to add clients to a stylist.
+  - As an salon owner, I want to view, add, update and delete stylists.
+  - As a salon owner, I want to view, add, update and delete clients.
+  - As a salon owner, I want to add clients to a stylist.
 
 ## Database Setup
 
-``# psql
-username=# CREATE DATABASE hair_salon;
-username=# \c hair_salon;
-train_system=# CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);
-train_system=# CREATE TABLE sylists (id serial PRIMARY KEY, name varchar);
-train_system=# CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;``
-
-
-## Code Example
-
-The magic behind the Interactive Dictionary is a set of custom `Word` and `Definition` classes with methods such as `Word#save`, `Word.clear`, `Word#define`, `Word.all`, `Definition#save`,`Definition.clear` and `Definition.all` method that act in sync to store, recall and correlate words and their relevant definitions. See example below:
-
-  ``test_word = Word.new({:term => "Spiders"})
-    test_word.define("The spookiest!")
-    test_word.define("really yucky")
-    test_word.definitions
-    ==> ["the spookiest", "really yucky"]))``
+``# psql``
+``username=# CREATE DATABASE hair_salon;``
+``username=# \c hair_salon;``
+``hair_salon=# CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);``
+``hair_salon=# CREATE TABLE sylists (id serial PRIMARY KEY, name varchar);``
+``hair_salon=# CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;``
 
 ## Contribute
 
-  - Issue Tracker: https://github.com/courtneymaepdx/interactive-dictionary/issues
-  - Source Code: https://github.com/courtneymaepdx/interactive-dictionary
-  - Pull Requests: https://github.com/courtneymaepdx/interactive-dictionary/pulls
+  - Issue Tracker: https://github.com/courtneyphillips/salon-database/issues
+  - Source Code: https://github.com/courtneyphillips/salon-database
+  - Pull Requests: https://github.com/courtneyphillips/salon-database/pulls
 
 ## Installation
 
@@ -62,6 +43,7 @@ Interactive Dictionary uses the following gems:
   - Sinatra-Contrib
   - RSpec
   - Pry
+  - PG
 
 To install, run `gem install bundle` in the command line.
 
