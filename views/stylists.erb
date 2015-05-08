@@ -1,17 +1,21 @@
-
 <div class="container">
 
-  <h3>Current Stylists:</h3>
+  <% if @stylists.any?() %>
+    <h3>Current Stylists:</h3>
 
-  <ul>
-    <% @stylists.each() do |stylist| %>
-      <li><a href="/stylists/<%= stylist.id() %>"> <%= stylist.name() %></a></li>
+    <ul>
+      <% @stylists.each() do |stylist| %>
+        <li><a href="/stylists/<%= stylist.id() %>"> <%= stylist.name() %></a></li>
+    </ul>
+      <% end %>
+    <% else %>
+      <p>There are currently no stylists to assign clients to! Try <a href="/stylists/new">adding a new stylist</a>
     <% end %>
-  </ul>
 
-  <p><a class="btn btn-primary btn-md" href="/" role="button"> < Go Back</a></p>
+    <br><br><br>
 
-  
+<div class="buttons">
+  <p><a class="btn btn-primary btn-md" href="/" role="button">Return Home</a></p>
 
-
+</div>
 </div>

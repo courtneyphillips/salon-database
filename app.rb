@@ -66,7 +66,7 @@ delete("/client/:id") do
   @client = Client.find(params.fetch("id").to_i())
   @client.delete()
   @clients = Client.all()
-  erb(:index)
+  redirect to ('/clients')
 end
 
 get('/stylists/:id') do
@@ -87,9 +87,9 @@ patch("/stylists/:id") do
   redirect to('/stylists')
 end
 
-delete("/stylist/:id") do
+delete("/stylists/:id") do
   @stylist = Stylist.find(params.fetch("id").to_i())
   @stylist.delete()
   @stylists = Stylist.all()
-  erb(:index)
+  redirect to('/stylists')
 end
