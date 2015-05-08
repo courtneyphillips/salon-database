@@ -84,7 +84,7 @@ patch("/stylists/:id") do
   name = params.fetch("name")
   @stylist = Stylist.find(params.fetch("id").to_i())
   @stylist.update({:name => name})
-  erb(:client)
+  redirect to('/stylists')
 end
 
 delete("/stylist/:id") do
