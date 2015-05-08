@@ -21,16 +21,14 @@ class Client
 
   define_singleton_method(:find) do |id|
     result = DB.exec("SELECT * FROM clients WHERE id = #{id};")
-    name = result.first().fetch("name")
-    stylist_id = result.first().fetch("stylist_id").to_i()
-    id = result.first().fetch("id").to_i()
+    name = result.first.fetch("name")
+    stylist_id = result.first.fetch("stylist_id").to_i()
+    id = result.first.fetch("id").to_i()
     Client.new({:name => name, :stylist_id => id, :id => id})
   end
 
   define_method(:==) do |other|
-    same_class = self.class() == other.class()
-    same_name = self.name() == other.name()
-    same_class && same_name
+    (self.name == other.name) && (self.id == other.id) && (self.stylist_id == other.stylist_id)
   end
 
   define_method(:save) do
@@ -48,11 +46,23 @@ class Client
     DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
   end
 
-  define_method(:stylist) do
-    stylist = DB.exec("SELECT * FROM stylists WHERE id = #{self.stylist_id()};")
-    name = stylist.first.fetch("name")
-    stylist_id = stylist.first.fetch("id").to_i()
-    Stylist.new({:name => name, :id => stylist_id})
-  end
+  # define_method(:stylist) do
+  #   stylist = DB.exec("SELECT * FROM stylists WHERE id = #{self.stylist_id()};")
+  #   name = stylist.first().fetch("name")
+  #   id = stylist.first.fetch("id").to_i()
 
-end
+  define_method(:stylist) do
+   client_stylist = []
+   stylists = DB.exec("SELECT * FROM stylists WHERE id = #{self.stylist_id()};")
+   stylists.each() do |stylist|
+     name = stylist.fetch("name")
+     id = stylist.fetch("id").to_i()
+     client_stylist.push(
+     @client_stylist = Stylist.new({:name => name, :id => client_id}))
+   end
+   client_stylist
+ end
+
+   end
+
+# end
