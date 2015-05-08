@@ -49,7 +49,7 @@ To install, run `gem install bundle` in the command line.
 
 ## Tests
 
-Both method and integration tests for Interactive Dictionary utilize the RSpec. Simply run `gem install rspec`, if it's not already installed, simply issue the command `rspec`, while located in the project's file.
+Both method and integration tests for Salon Management utilize the RSpec. Simply run `gem install rspec`, if it's not already installed, simply issue the command `rspec`, while located in the project's file.
 
 ## Contact
 
