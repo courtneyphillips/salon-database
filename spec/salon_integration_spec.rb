@@ -23,8 +23,8 @@ describe('add stylist path', {:type => :feature}) do
   end
 end
 
-describe('add client to stylist path', {:type => :feature}) do
-  it('will successfully add a new client to stylist') do
+describe('new stylist, then add client to that stylist path', {:type => :feature}) do
+  it('Will successfully add a new stylist and corresponding client') do
     visit('/')
     click_link('Add New Stylist')
     fill_in("name", :with => "test stylist")
@@ -35,5 +35,18 @@ describe('add client to stylist path', {:type => :feature}) do
     select('test stylist', :from => "stylist_id")
     click_button("Add Client")
     expect(page).to have_content("test client")
+  end
+end
+
+describe('delete stylist path', {:type => :feature}) do
+  it('will successfully add a new client to stylist') do
+    visit('/')
+    click_link('Add New Stylist')
+    fill_in("name", :with => "test stylist")
+    click_button("Add Stylist")
+    click_link('test stylist')
+    click_link('Edit test stylist info')
+    click_button('Delete Stylist')
+    expect(page).to have_content("There are currently no stylists")
   end
 end
