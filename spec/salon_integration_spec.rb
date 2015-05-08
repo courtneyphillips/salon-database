@@ -1,4 +1,5 @@
 require('capybara/rspec')
+require('spec_helper')
 require('./app')
 
 Capybara.app = Sinatra::Application
@@ -29,7 +30,7 @@ describe('add client to stylist path', {:type => :feature}) do
     fill_in("name", :with => "test stylist")
     click_button("Add Stylist")
     click_link('test stylist')
-    click_button("Add Client")
+    click_link("Add Client")
     fill_in("name", :with => "test client")
     select('test stylist', :from => "stylist_id")
     click_button("Add Client")

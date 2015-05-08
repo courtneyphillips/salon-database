@@ -28,7 +28,7 @@ class Client
   end
 
   define_method(:==) do |other|
-    (self.name == other.name) && (self.id == other.id) && (self.stylist_id == other.stylist_id)
+    (self.name == other.name) && (self.id == other.id)
   end
 
   define_method(:save) do

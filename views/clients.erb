@@ -1,8 +1,7 @@
 <div class="container">
-  <h2>All Clients</h2>
+  <h2>All Salon Clients:</h2><br>
 
   <% if @clients.any?() %>
-      <h3>Current Clients:</h3>
       <ul>
         <% @clients.each() do |client| %>
           <li><a href="/clients/<%= client.id() %>"> <%= client.name() %></a></li>
