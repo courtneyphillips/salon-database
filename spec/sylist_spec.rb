@@ -26,4 +26,20 @@ describe(Stylist) do
     end
   end
 
+  describe('#name') do
+    it("returns a stylists name") do
+      test_stylist = Stylist.new({:name => "Some Stylist", :id => nil})
+      test_stylist.save()
+      expect(test_stylist.name()).to(eq("Some Stylist"))
+    end
+  end
+
+  describe('#id')  do
+    it("returns a stylists unique id") do
+      test_stylist = Stylist.new({:name => "Some Stylist", :id => nil})
+      test_stylist.save()
+      expect(test_stylist.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
+
 end

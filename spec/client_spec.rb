@@ -26,4 +26,28 @@ describe(Client) do
     end
   end
 
+  describe('#name') do
+    it("returns a clients name") do
+      test_client  = Client.new({:name => "Scary Spice", :stylist_id => 1, :id => nil})
+      test_client.save()
+      expect(test_client.name()).to(eq("Scary Spice"))
+    end
+  end
+
+  describe('#stylist_id') do
+    it("returns the id of the clients stylist") do
+      test_client  = Client.new({:name => "Scary Spice", :stylist_id => 1, :id => nil})
+      test_client.save()
+      expect(test_client.stylist_id()).to(eq(1))
+    end
+  end
+
+  describe('#id')  do
+    it("returns a clients unique id") do
+      test_client  = Client.new({:name => "Scary Spice", :stylist_id => 1, :id => nil})
+      test_client.save()
+      expect(test_client.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
+
 end
