@@ -1,5 +1,4 @@
 
-
 User Stories:
 
 As an salon owner, I want to view, add, update and delete stylists.
