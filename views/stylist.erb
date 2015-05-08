@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Stylist:  <%= @stylist.name() %> </h1>
+  <h2>Stylist:  <%= @stylist.name() %> </h2>
 
   <% if @stylist_clients.any?() %>
       <h3>Current Clients:</h3>
@@ -17,7 +17,8 @@
 
   <% end %>
 
-<p><a class="btn btn-primary btn-md" href="/clients/new" role="button"> Add Client</a></p>
-<a class="btn btn-primary btn-md" href="/stylists" role="button">Back to Stylist List</a>
+  <p><a class="btn btn-primary btn-md" href="/clients/new" role="button"> Add Client</a></p>
+  <p><a class="btn btn-primary btn-md" href="/stylists" role="button">Back to Stylist List</a></p>
+  <p><a class="btn btn-primary btn-md" href="/stylists/<%= @stylist.id() %>/edit" role="button"> Edit <%= @stylist.name() %>'s' info</a></p>
 
 </div>
