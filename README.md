@@ -21,12 +21,14 @@ The Hair Salon Management app was created with the following needs of salon owne
 
 ## Database Setup
 
-```# psql``
+```
+# psql
 username=# CREATE DATABASE hair_salon;
 username=# \c hair_salon;
 hair_salon=# CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);
 hair_salon=# CREATE TABLE sylists (id serial PRIMARY KEY, name varchar);
-hair_salon=# CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;```
+hair_salon=# CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
+```
 
 ## Contribute
 
