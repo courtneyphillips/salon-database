@@ -3,10 +3,6 @@
 
 ---
 
-#### Links
-
-  - GitHub: https://github.com/courtneyphillips/interactive-dictionary
-
 ## Synopsis
 
 Salon Management is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to record hairstylists and their corresponding clients into a database for later recall. Both stylists and clients entries can then be edited as necessary.
@@ -52,6 +48,10 @@ To install, run `gem install bundle` in the command line.
 ## Tests
 
 Both method and integration tests for Salon Management utilize the RSpec. Simply run `gem install rspec`, if it's not already installed, simply issue the command `rspec`, while located in the project's file.
+
+## Links
+
+  - GitHub: https://github.com/courtneyphillips/interactive-dictionary
 
 ## Contact
 
