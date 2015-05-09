@@ -1,19 +1,20 @@
-<h1>Update <%=@stylist.name() %> </h1>
+<h1>Update <%=@stylist.name() %> <span class="glyphicon glyphicon-pencil"></span></h1>
+<br>
 
 <form action="/stylists/<%= @stylist.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="name">Rename Stylist:</label>
   <input id="name" name="name" type="text">
-
   <button type="submit">Update</button>
 </form>
 
 <form action="/stylists/<%= @stylist.id() %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-
-  <button type="submit">Delete Stylist</button>
+  <input name="_method" type="hidden" value="delete"><br>
+  <button type="submit" class="btn btn-primary btn-md">Delete Stylist</button>
 </form>
-<br><br><br>
+
+<br>
+
 <div class="buttons">
-<a class="btn btn-primary btn-md" href="/" role="button">Return Home</a>
+  <a class="btn btn-primary btn-md" href="/" role="button">Return Home</a>
 </div>

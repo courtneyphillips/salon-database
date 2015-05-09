@@ -1,7 +1,7 @@
 <div class="container">
 
   <% if @stylists.any?() %>
-    <h3>Current Stylists:</h3>
+    <h3>Current Stylists: <span class="glyphicon glyphicon-list"></span></h3><br>
 
     <ul>
       <% @stylists.each() do |stylist| %>
@@ -14,8 +14,8 @@
 
     <br><br><br>
 
-<div class="buttons">
-  <p><a class="btn btn-primary btn-md" href="/" role="button">Return Home</a></p>
+  <div class="buttons">
+    <a class="btn btn-primary btn-md" href="/" role="button">Return Home</a>
+  </div>
 
-</div>
 </div>

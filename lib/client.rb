@@ -46,4 +46,4 @@ class Client
     DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
   end
 
-   end
+end
