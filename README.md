@@ -5,7 +5,7 @@
 
 ## Synopsis
 
-Salon Management is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to record hairstylists and their corresponding clients into a database for later recall. Both stylists and clients entries can then be edited as necessary.
+Salon Management is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to record hairstylists and their corresponding clients into a database for later recall. Both stylists and clients entries can then be edited as necessary. Crafted as part of the Spring 2015 Ruby course curriculum at [Epicodus](https://www.epicodus.com/).
 
 ## Motivation
 
